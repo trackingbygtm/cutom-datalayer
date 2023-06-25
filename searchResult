@@ -1,0 +1,51 @@
+cHTML custom arry listener
+
+<script>
+// Custom JavaScript code
+function trackButtonClick(event) {
+  var resultItem = event.target.closest('.resultItem');
+  var titleValue = resultItem.querySelector('.resultTitle').textContent;
+
+  // Send article data to Google Tag Manager
+  dataLayer.push({
+    'event': 'articleClicked',
+    'articleTitle': titleValue,
+    'articleContent': contentValue
+    // Add any additional data you want to track
+  });
+}
+
+// Attach event listener to all result buttons
+var resultButtons = document.querySelectorAll('.resultButton');
+resultButtons.forEach(function(button) {
+  button.addEventListener('click', trackButtonClick);
+});
+
+  
+</script>
+
+
+======structure=======
+<!-- Search results -->
+<div class="searchResults">
+  <div class="resultItem">
+    <h3 class="resultTitle">Article 1</h3>
+    <p>Content 1</p>
+    <img src="article1.jpg" alt="Article 1" />
+    <button class="resultButton">Track</button>
+  </div>
+  <div class="resultItem">
+    <h3 class="resultTitle">Article 2</h3>
+    <p>Content 2</p>
+    <img src="article2.jpg" alt="Article 2" />
+    <button class="resultButton">Track</button>
+  </div>
+  <!-- Add more result items as needed -->
+</div>
+
+
+
+if you smart You you know that what is that  how to use
+
+any help contact us
+https://wlo.link/@trackingbygtm
